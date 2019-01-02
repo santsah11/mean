@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function Node(val) {
+            this.val = val;
+            this.next = null
+        }
+        function sllist() {
+            this.head = null
+            
+        }
+
+
+            sllist.prototype.addback = function (val) {
+                var mynode = new Node(val);
+                runner = this.head
+                if (this.head === null) {
+                    this.head = mynode
+                    return this.head;
+                } else
+
+                    while (runner.next) {
+                        runner = runner.next
+                    }
+                runner.next = mynode;
+                return mynode
+
+            }
+            mysllist = new sllist();
+        console.log( mysllist.addback(45));
+       
+
+    </script>
+    <title>Singly linnk list</title>
+</head>
+
+<body>
+    <h1> Helooo checking the linki</h1>
+</body>
+
+</html>

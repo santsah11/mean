@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Mongose</title>
+</head>
+<body>
+
+<%- JSON.stringify(messages) %> 
+
+<% if(messages.registration) { %>
+     <% for (var x of messages.registration) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+    <form action="/users" method="POST" >
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" placeholder="Enter Name">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Age</label>
+          <input type="number" class="form-control" id="exampleInputPassword1" name="age" placeholder="Age">
+        </div>
+   
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+     
+     
+      <% for (var x in info) { %>
+        <h3>ID : <%=info[x].id%></h3>
+        <h3>Name: <%= info[x].name %></h3>
+        <h4>age: <%= info[x].age %></h4>
+        <hr>
+    <% } %>
+</body>
+</html>

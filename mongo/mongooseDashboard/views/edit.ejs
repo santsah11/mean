@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+    <title>Adding New Mongo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Animal</h1>
+        <p></p>
+        <%=dis.name%>
+        <form action="/edit/<%=dis._id%>" method="POST">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Your Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput"placeholder="<%=dis.name%>" name="name">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Your Favorite Food</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="<%=dis.food%>" name="food">
+            </div>
+            <button type="submit" class="btn btn-primary">Add New Mongo</button> 
+    
+        </form>
+
+    </div>
+</body>
+</html>

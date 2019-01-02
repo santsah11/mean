@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var socket = io(); 
+
+            $('#btn').click(function () {
+                socket.emit('btnclicked')
+            });
+
+            socket.on('count', function (data) {
+                console.log("received")
+                $(".number").html(data.response)
+            })
+            $('#clr').click(function(){
+                socket.emit('clrbuttonclicked')
+            })
+            socket.on('clear',function(counter){
+                $('.number').html(counter.counter)
+                
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <h1>the button has been pushed <span class='number'> </span>times </h1>
+    <button  class="btb btn-primary" id="btn"> click me add </button>
+    <br>
+    <p></p>
+    <button id="clr"> clear the counts</button>
+</body>
+
+</html>

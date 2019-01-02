@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Gotta Catch'em All</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // $.get("https://api.github.com/users/santsah11", function (data) {
+            //     console.log("Got my info ", data);
+
+          
+        
+        $("#btn").click(function () {
+                $.get("https://api.github.com/users/santsah11", displayName)
+            });
+
+        function displayName(data) {
+            $(".head").toggle().text(data.login)
+        };
+
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <h1 class="head"></h1>
+    <button id="btn">click on me</button>
+</body>
+
+</html>

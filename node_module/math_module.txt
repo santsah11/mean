@@ -1,0 +1,40 @@
+var mathlib = require('./mathlib')();
+console.log(" Adding Two numbers from mathlib," + mathlib.add(5,5))
+console.log("This is square number ," +mathlib.square(5));
+console.log(" random numbers numbers from mathlib," + mathlib.random(1,1000))
+console.log("this is bubble sort," +mathlib.bubbleSort([6,12,1,14,8,0]));
+
+// this would be my module file 
+
+
+module.exports = function () {
+    return {
+        add: function (num1, num2) {
+            return num1 + num2;
+        },
+        multiply: function (num1, num2) {
+            return num1 * num2;
+        },
+        square: function (num) {
+            return num * num;
+        },
+        random: function (max, min) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
+        bubbleSort: function (arr) {
+
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        var temp = arr[j];
+                        arr[j] =arr[i];
+                        arr[i] = temp;
+                    }
+
+                }
+            }
+            return arr
+        }
+      
+    }
+};
